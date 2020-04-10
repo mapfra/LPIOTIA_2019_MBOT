@@ -4,7 +4,7 @@ CREATE TABLE utilisateur(
    pseudo VARCHAR(255) NOT NULL
 ) ;
 
-CREATE TABLE coordonnées(
+CREATE TABLE coordonnees(
    coordonnées_id INT AUTO_INCREMENT PRIMARY KEY,
    longitude VARCHAR(255) NOT NULL,
    latitude VARCHAR(255)NOT NULL
