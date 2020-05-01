@@ -83,7 +83,7 @@
 						<i class="fa fa-bars"></i>
 					</button>
 					<a class="navbar-brand" href="#brand">
-						<img src="assets/images/logo.png" class="logo logo-display" alt="">
+						Projet Mbot
 					</a>
 
 				</div>
@@ -92,9 +92,9 @@
 				<!-- navbar menu -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-center">
-						<li><a href="#home">Home</a></li>                    
-						<li><a href="#features">Map</a></li>
-				
+						<li><a href="#home">Accueil</a></li>                    
+						<li><a href="#features">Carte</a></li>
+
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div>   
@@ -106,110 +106,133 @@
 			<div class="container">
 				<div class="row">
 					<div class="main_home">
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="home_text">
-								<h1 class="text-white">Relevé de Température</h1>
+								<h2 class="text-white">Relevé de Données par le Robot Mbot</h2>
 							</div>
+							<div><img src="assets/images/mbot.jpg" alt="" /></div>
 
 							<div class="home_btns m-top-40">
-								<a href="" class="btn btn-danger m-top-20">Download</a>
-								<a href="#features" class="btn btn-primary m-top-20">Map</a>
+								<a href="" class="btn btn-danger m-top-20">Telecharger le relevé .csv</a>
+								<a href="#features" class="btn btn-primary m-top-20">Carte</a>
 							</div>
 						</div>
 
-						<div class="col-md-6">
-							<div class="phone_one phone_attr1 text-center sm-m-top-50">
-								<div class="attr_deg">9&deg;</div>
-								<div class="attr_sun text-uppercase text-white">Sunny</div>
-								<!--<div class="attr_lon text-uppercase text-white">London</div>-->
-								<!--<img src="assets/images/phone01.png" alt="" />-->
-							</div>
+						
+						<div class="scrooldown">
+							<a href="#features"><i class="fa fa-chevron-down"></i></a>
+						</div>
+						<div class="col-md-8">
+							<table class="table table-bordered">
+								<thead class="thead-dark">
+									<tr>
+										<th scope="col" class="text-white">Nom Robot</th>
+										<th scope="col"class="text-white">Longitude</th>
+										<th scope="col"class="text-white">Latitude</th>
+										<th scope="col" class="text-white">Date</th>
+										<th scope="col" class="text-white">Température</th>
+
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									for ($i = 1; $i <= 10; $i++) {
+
+										echo '<tr>
+										<td class="text-white">Nom'.$i.'</td>
+										<td class="text-white">Longitude'.$i.'</td>
+										<td class="text-white">Latitude'.$i.'</td>
+										<td class="text-white">Date'.$i.'</td>
+										<td class="text-white">Température'.$i.'</td>	
+										</tr>';
+									}
+
+									?>
+								</tbody>
+							</table></div>
+
 						</div>
 
-					</div>
-					<div class="scrooldown">
-						<a href="#features"><i class="fa fa-chevron-down"></i></a>
-					</div>
 
-				</div><!--End off row-->
-			</div><!--End off container -->
-		</section> <!--End off Home Sections-->
+					</div><!--End off row-->
+				</div><!--End off container -->
+			</section> <!--End off Home Sections-->
 
 
 
-		<!--Featured Section-->
-		<section id="features" class="features">
-			<div class="container">
-				<div class="row">
-					<div class="main_features p-top-100">
-						<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-							<div class="head_title text-center">
-								<h2>Map du Trajet Mbot</h2>
-								<h5>Mbot n°1</h5>
+			<!--Featured Section-->
+			<section id="features" class="features">
+				<div class="container">
+					<div class="row">
+						<div class="main_features p-top-100">
+							<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+								<div class="head_title text-center">
+									<h2>Map du Trajet Mbot</h2>
+									<h5>Mbot n°1</h5>
+								</div>
 							</div>
+
+						</div>
+					</div><!-- End off row -->
+
+
+					<div class="row">
+						<!--Google map-->
+						<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2889.697847561259!2d7.099413715474127!3d43.59200957912353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sus!4v1584643710493!5m2!1sfr!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 						</div>
 
+						<!--Google Maps-->
+
 					</div>
-				</div><!-- End off row -->
+				</div><!-- End off container -->
+			</section><!-- End off Featured Section-->
 
 
-				<div class="row">
-					<!--Google map-->
-					<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2889.697847561259!2d7.099413715474127!3d43.59200957912353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sus!4v1584643710493!5m2!1sfr!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+
+
+			<!-- scroll up-->
+			<div class="scrollup">
+				<a href="#"><i class="fa fa-chevron-up"></i></a>
+			</div><!-- End off scroll up -->
+
+
+			<footer id="footer" class="footer bg-black">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="main_footer text-center p-top-40 p-bottom-30">
+								<p class="wow fadeInRight" data-wow-duration="1s">
+									Made by Thomas Paredes Mbot
+									2020
+								</p>
+							</div>
+						</div>
 					</div>
-
-					<!--Google Maps-->
-
 				</div>
-			</div><!-- End off container -->
-		</section><!-- End off Featured Section-->
+			</footer>
 
 
 
 
+		</div>
 
-		<!-- scroll up-->
-		<div class="scrollup">
-			<a href="#"><i class="fa fa-chevron-up"></i></a>
-		</div><!-- End off scroll up -->
+		<!-- JS includes -->
 
+		<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+		<script src="assets/js/vendor/bootstrap.min.js"></script>
 
-		<footer id="footer" class="footer bg-black">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="main_footer text-center p-top-40 p-bottom-30">
-							<p class="wow fadeInRight" data-wow-duration="1s">
-								Made by Thomas Paredes Mbot
-								2020
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+		<script src="assets/js/jquery.magnific-popup.js"></script>
+		<script src="assets/js/jquery.easing.1.3.js"></script>
+		<script src="assets/js/swiper.min.js"></script>
+		<script src="assets/js/jquery.collapse.js"></script>
+		<script src="assets/js/bootsnav.js"></script>
 
 
 
+		<script src="assets/js/plugins.js"></script>
+		<script src="assets/js/main.js"></script>
 
-	</div>
-
-	<!-- JS includes -->
-
-	<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
-	<script src="assets/js/vendor/bootstrap.min.js"></script>
-
-	<script src="assets/js/jquery.magnific-popup.js"></script>
-	<script src="assets/js/jquery.easing.1.3.js"></script>
-	<script src="assets/js/swiper.min.js"></script>
-	<script src="assets/js/jquery.collapse.js"></script>
-	<script src="assets/js/bootsnav.js"></script>
-
-
-
-	<script src="assets/js/plugins.js"></script>
-	<script src="assets/js/main.js"></script>
-
-</body>
-</html>
+	</body>
+	</html>
