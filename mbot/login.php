@@ -38,22 +38,36 @@
        echo "Erreur : Impossible de se connecter à MySQL." . PHP_EOL;
      }
 
+
+     
+
      //verification formulaire
      if(isset($_POST['username'])){
 
       $uname=$_POST['username'];
       $password=$_POST['password'];
+      $hash = '$2y$10$SDsrxcQ03JzfKQwhR4GOpudDqWmcgJ0od.YphR2vbz1JPHXZcFVn.';
+
 
       $result = mysqli_query($link, "SELECT * FROM utilisateur where pseudo='".$uname."'AND mdp='".$password."' limit 1");
 
-      if(mysqli_num_rows($result)==1){
-        echo " You Have Successfully Logged in";
+      // if(mysqli_num_rows($result)==1){
+      //   echo " You Have Successfully Logged in";
+      //   //header("Location: http://83.159.82.89:8080/");
+      //   exit();
+      // }
+      // else{
+      //   echo " You Have Entered Incorrect Password";
+      //   exit();
+      // }
+
+      if (password_verify($_POST['password'], $hash)) {
+        echo 'Le mot de passe est valide !';
         header("Location: http://83.159.82.89:8080/");
         exit();
-      }
-      else{
-        echo " You Have Entered Incorrect Password";
-        exit();
+      } 
+      else {
+        echo 'Le mot de passe est invalide.';
       }
 
     }

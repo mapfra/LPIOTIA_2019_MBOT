@@ -6,13 +6,13 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="favicon.ico">
-	<style>.map-container{
+	<style>#map{
 		overflow:hidden;
 		padding-bottom:56.25%;
 		position:relative;
 		height:0;
 	}
-	.map-container iframe{
+	#map iframe{
 		left:0;
 		top:0;
 		height:100%;
@@ -20,11 +20,6 @@
 		position:absolute;
 	}</style>
 	
-
-	<!--Google Font link-->
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
-
 	<link rel="stylesheet" href="assets/css/swiper.min.css">
 	<link rel="stylesheet" href="assets/css/animate.css">
 	<link rel="stylesheet" href="assets/css/iconfont.css">
@@ -32,16 +27,27 @@
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/magnific-popup.css">
 	<link rel="stylesheet" href="assets/css/bootsnav.css">
-
-
-
-
 	<link rel="stylesheet" href="assets/css/style.css">
 
 	<!-- Responsive css-->
 	<link rel="stylesheet" href="assets/css/responsive.css" />
 
 	<script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+	<script src="assets/js/vendor/bootstrap.min.js"></script>
+
+	<script src="assets/js/jquery.magnific-popup.js"></script>
+	<script src="assets/js/jquery.easing.1.3.js"></script>
+	<script src="assets/js/swiper.min.js"></script>
+	<script src="assets/js/jquery.collapse.js"></script>
+	<script src="assets/js/bootsnav.js"></script>
+	<script src="assets/js/plugins.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/map.js"></script>
+
+
+
+	
 </head>
 
 <body data-spy="scroll" data-target=".navbar-collapse">
@@ -113,7 +119,7 @@
 							<div><img src="assets/images/mbot.jpg" alt="" /></div>
 
 							<div class="home_btns m-top-40">
-								<a href="" class="btn btn-danger m-top-20">Telecharger le relevé .csv</a>
+								<a href="export.php" class="btn btn-danger m-top-20">Telecharger le relevé .csv</a>
 								<a href="#features" class="btn btn-primary m-top-20">Carte</a>
 							</div>
 						</div>
@@ -123,33 +129,54 @@
 							<a href="#features"><i class="fa fa-chevron-down"></i></a>
 						</div>
 						<div class="col-md-8">
-							<table class="table table-bordered">
-								<thead class="thead-dark">
-									<tr>
-										<th scope="col" class="text-white">Nom Robot</th>
-										<th scope="col"class="text-white">Longitude</th>
-										<th scope="col"class="text-white">Latitude</th>
-										<th scope="col" class="text-white">Date</th>
-										<th scope="col" class="text-white">Température</th>
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<thead class="thead-dark">
+										<tr>
+											<th scope="col"class="text-white">Longitude</th>
+											<th scope="col"class="text-white">Latitude</th>
+											<th scope="col"class="text-white">Hauteur</th>
+											<th scope="col" class="text-white">Date</th>
+											<th scope="col" class="text-white">Température</th>
 
-									</tr>
-								</thead>
-								<tbody>
-									<?php
-									for ($i = 1; $i <= 10; $i++) {
+										</tr>
+									</thead>
+									<tbody>
+										<?php
+									//connexion bdd
+										$host="localhost";
+										$user="root";
+										$password="";
+										$db="test";
 
-										echo '<tr>
-										<td class="text-white">Nom'.$i.'</td>
-										<td class="text-white">Longitude'.$i.'</td>
-										<td class="text-white">Latitude'.$i.'</td>
-										<td class="text-white">Date'.$i.'</td>
-										<td class="text-white">Température'.$i.'</td>	
-										</tr>';
-									}
+										$link = mysqli_connect($host,$user,$password,$db);
 
-									?>
-								</tbody>
-							</table></div>
+										if (!$link) {
+											echo "Erreur : Impossible de se connecter à MySQL." . PHP_EOL;
+										}
+
+										//requete 
+										$result = mysqli_query($link, "SELECT * FROM coordonnees order by date_ desc LIMIT 10");
+										$i=0;
+
+										while ($coordonnees = mysqli_fetch_assoc($result)) {
+
+											echo '<tr id="idTr' .$i.'">
+											<td class="text-white" id="long">'.$coordonnees['longitude'].'</td>
+											<td class="text-white">'.$coordonnees['latitude'].'</td>
+											<td class="text-white">'.$coordonnees['hauteur'].'</td>
+											<td class="text-white">'.$coordonnees['date_'].'</td>
+											<td class="text-white">'.$coordonnees['temperature'].'</td>
+											</tr>';
+											$i++;
+										}
+
+										mysqli_free_result($result);
+
+										?>
+									</tbody>
+								</table></div>
+							</div>
 
 						</div>
 
@@ -176,63 +203,32 @@
 					</div><!-- End off row -->
 
 
+					
+
 					<div class="row">
-						<!--Google map-->
-						<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2889.697847561259!2d7.099413715474127!3d43.59200957912353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sus!4v1584643710493!5m2!1sfr!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-						</div>
+						<div id="map"></div>
 
-						<!--Google Maps-->
+						<script async defer
+						src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhypER8NMGPxwvPPlrgJzBRNxCdPAKoNI&callback=initMap">
+					</script>
 
-					</div>
-				</div><!-- End off container -->
-			</section><!-- End off Featured Section-->
-
-
-
-
-
-			<!-- scroll up-->
-			<div class="scrollup">
-				<a href="#"><i class="fa fa-chevron-up"></i></a>
-			</div><!-- End off scroll up -->
-
-
-			<footer id="footer" class="footer bg-black">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="main_footer text-center p-top-40 p-bottom-30">
-								<p class="wow fadeInRight" data-wow-duration="1s">
-									Made by Thomas Paredes Mbot
-									2020
-								</p>
-							</div>
-						</div>
-					</div>
 				</div>
-			</footer>
+			</div><!-- End off container -->
+		</section><!-- End off Featured Section-->
 
 
+
+
+
+		<!-- scroll up-->
+		<div class="scrollup">
+			<a href="#"><i class="fa fa-chevron-up"></i></a>
 
 
 		</div>
 
-		<!-- JS includes -->
 
-		<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
-		<script src="assets/js/vendor/bootstrap.min.js"></script>
-
-		<script src="assets/js/jquery.magnific-popup.js"></script>
-		<script src="assets/js/jquery.easing.1.3.js"></script>
-		<script src="assets/js/swiper.min.js"></script>
-		<script src="assets/js/jquery.collapse.js"></script>
-		<script src="assets/js/bootsnav.js"></script>
-
-
-
-		<script src="assets/js/plugins.js"></script>
-		<script src="assets/js/main.js"></script>
+		
 
 	</body>
 	</html>
