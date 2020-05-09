@@ -2,8 +2,8 @@
 									//connexion bdd
 $host="localhost";
 $user="root";
-$password="";
-$db="test";
+$password="totolharicot";
+$db="mbot";
 
 $link = mysqli_connect($host,$user,$password,$db);
 

@@ -29,8 +29,8 @@
       //connexion bdd
       $host="localhost";
       $user="root";
-      $password="";
-      $db="test";
+      $password="totolharicot";
+      $db="mbot";
 
       $link = mysqli_connect($host,$user,$password,$db);
 
@@ -49,7 +49,7 @@
       $hash = '$2y$10$SDsrxcQ03JzfKQwhR4GOpudDqWmcgJ0od.YphR2vbz1JPHXZcFVn.';
 
 
-      $result = mysqli_query($link, "SELECT * FROM utilisateur where pseudo='".$uname."'AND mdp='".$password."' limit 1");
+      $result = mysqli_query($link, "SELECT * FROM utilisateur where pseudo='".$uname."' limit 1");
 
       // if(mysqli_num_rows($result)==1){
       //   echo " You Have Successfully Logged in";
@@ -61,9 +61,9 @@
       //   exit();
       // }
 
-      if (password_verify($_POST['password'], $hash)) {
+      if (password_verify($_POST['password'], $hash)and mysqli_num_rows($result)==1)) {
         echo 'Le mot de passe est valide !';
-        header("Location: http://83.159.82.89:8080/");
+        header("Location: http://83.159.82.89:8080/board.php");
         exit();
       } 
       else {

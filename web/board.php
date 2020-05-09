@@ -135,7 +135,7 @@
 										<tr>
 											<th scope="col"class="text-white">Longitude</th>
 											<th scope="col"class="text-white">Latitude</th>
-											<th scope="col"class="text-white">Hauteur</th>
+											<th scope="col"class="text-white">ID Coordonnées</th>
 											<th scope="col" class="text-white">Date</th>
 											<th scope="col" class="text-white">Température</th>
 
@@ -146,8 +146,8 @@
 									//connexion bdd
 										$host="localhost";
 										$user="root";
-										$password="";
-										$db="test";
+										$password="totolharicot";
+										$db="mbot";
 
 										$link = mysqli_connect($host,$user,$password,$db);
 
@@ -164,7 +164,7 @@
 											echo '<tr id="idTr' .$i.'">
 											<td class="text-white" id="long">'.$coordonnees['longitude'].'</td>
 											<td class="text-white">'.$coordonnees['latitude'].'</td>
-											<td class="text-white">'.$coordonnees['hauteur'].'</td>
+											<td class="text-white">'.$coordonnees['coordonnées_id'].'</td>
 											<td class="text-white">'.$coordonnees['date_'].'</td>
 											<td class="text-white">'.$coordonnees['temperature'].'</td>
 											</tr>';
