@@ -43,10 +43,10 @@ C'est le dossier où sont réunis tous nos rendus et documents concernant le pro
 
 C'est le dossier où sont réunis tous nos codes concernant le projet.
 
-`* _"Site_Web"_ : Les codes déployés sur le site et la BDD ,`  
-`* _"App_Mobile"_ : Tous nos codes concernant l'application mobile ,`
-`* _"Capteurs"_ : Tous nos codes sur le capteur GPS et le capteur Température ,`   
-`* _"Module_MQTT"_ : Tous nos codes sur le module MQTT ,`      
+`* _Site Web_ : Les codes déployés sur le site et la BDD ,`    
+`* _App Mobile_ : Tous nos codes concernant l'application mobile ,`   
+`* _Capteurs_ : Tous nos codes sur le capteur GPS et le capteur Température ,`      
+`* _Module MQTT_ : Tous nos codes sur le module MQTT ,`        
 
 
 
