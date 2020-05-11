@@ -2,8 +2,8 @@
 ------------------
 # _PROJET MBOT_  
 
-- Thomas Paredes  
-- Benoît Cavallo
+- *Thomas Paredes*  
+- *Benoît Cavallo*
 
 LP IOTIA 2019/20
 
@@ -18,9 +18,9 @@ Le projet MBOT réalisé dans le cadre universitaire (IUT de Nice Sophia-Antipol
 *******************  
 Un _site web_ disponible à l'adresse suivante : http://83.159.82.89:8080/ permet de mettre en avant l'exploitation des données collecter par le MBOT.
 
-Pour se connecter :   
-user = admin      
-password = admin  
+_Pour se connecter_ :   
+user = *admin*      
+password = *admin*  
 
 *******************  
 ## Schéma de l'architecture de notre projet :  
@@ -32,10 +32,10 @@ password = admin
   
 * Dossier "Documents_Rendu" :  
 
-`* Vidéos de démonstration du site web, de l'application mobile et du robot Mbot,`  
-`* PowerPoint de la présentation,  `
-`* Cahier des Charges,` 
-`* Rendu final du projet.`
+`* Vidéos de démonstration du site web, de l'application mobile et du robot Mbot,`     
+`* PowerPoint de la présentation,`  
+`* Cahier des Charges,`   
+`* Rendu final du projet.`  
 
 
 
