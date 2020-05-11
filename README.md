@@ -47,4 +47,3 @@ C'est le dossier où sont réunis tous nos codes concernant le projet.
 `* App Mobile : Tous nos codes concernant l'application mobile,`   
 `* Capteurs : Tous nos codes sur le capteur GPS et le capteur Température,`      
 `* Module MQTT : Tous nos codes sur le module MQTT.`        
-----------------------------------------------------------------------------------------------
