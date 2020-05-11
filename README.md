@@ -22,6 +22,18 @@ user = admin
 password = admin  
 
 *******************  
+Schéma de l'architecture de notre projet :  
 
-![Architecture](../master/Schema_architecture.png)
+![Architecture](../master/Images/Schema_architecture.png)
+*******************  
+
+Organisation du GIT :  
+Dossier "Documents_Rendu" :  
+
+- Vidéos de démonstration du site web, de l'application mobile et du robot Mbot,  
+- PowerPoint de la présentation,  
+- Cahier des Charges,  
+- Rendu final du projet.
+
+
 
