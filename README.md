@@ -21,4 +21,7 @@ Pour se connecter :
 user = admin      
 password = admin  
 
-*******************
+*******************  
+
+![Architecture](../master/Schema_architecture.png)
+
