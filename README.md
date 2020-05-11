@@ -12,7 +12,7 @@ LP IOTIA 2019/20
 -----------------
 
 
-Le projet MBOT réalisé dans le cadre universitaire (IUT de Nice Sophia-Antipolis) est un robot qui pourrait être à terme deployé dans un milieu hostile (incendie ou très faible température extérieur par exemple). Celui-ci est équipé de capteur de température et de position GPS, lui permettant d'être localisable et de récolter des données de type métérologiques exploitable par la suite pour des relevés ou des cartes.
+Le projet MBOT réalisé dans le cadre universitaire (IUT de Nice Sophia-Antipolis) est *d'émuler* un robot qui pourrait être à terme deployé dans un milieu hostile (incendie ou très faible température extérieur par exemple). Celui-ci est équipé de capteur de température et de position GPS, lui permettant d'être localisable et de récolter des données de type métérologiques exploitable par la suite pour des relevés ou des cartes.
 
 
 *******************  
@@ -30,12 +30,25 @@ password = *admin*
 
 ## Organisation du GIT :  
   
-* Dossier "Documents_Rendu" :  
+* Dossier *Documents_Rendu* :  
+
+C'est le dossier où sont réunis tous nos rendus et documents concernant le projet.  
 
 `* Vidéos de démonstration du site web, de l'application mobile et du robot Mbot,`     
 `* PowerPoint de la présentation,`  
 `* Cahier des Charges,`   
-`* Rendu final du projet.`  
+`* Rendu final du projet.`    
+
+* Dossier *Sources* : 
+
+C'est le dossier où sont réunis tous nos codes concernant le projet.
+
+`* _"Site_Web"_ : Les codes déployés sur le site et la BDD ,`  
+`* _"App_Mobile"_ : Tous nos codes concernant l'application mobile ,`
+`* _"Capteurs"_ : Tous nos codes sur le capteur GPS et le capteur Température ,`   
+`* _"Module_MQTT"_ : Tous nos codes sur le module MQTT ,`      
+
+
 
 
 
